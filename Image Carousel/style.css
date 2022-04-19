@@ -14,7 +14,7 @@ body{
 .carousel{
 /* box-shadow: ; */
 height: 530px;;
-width: 500px;
+width: 300px;
 overflow: hidden;
 }
 
@@ -30,8 +30,8 @@ img {
     align-items: center;
     justify-content: center; */
     height: 500px;
-    width: 500px;
-    object-fit: fill;
+    width: 350px;
+    object-fit: cover;
 }
 
 .buttons-container{

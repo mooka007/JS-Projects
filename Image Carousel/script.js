@@ -19,7 +19,7 @@ function changeImage(){
     }else if(idx < 0 ) {
         idx = img.length - 1;
     }
-    imgs.style.transform = `translateX(${-idx * 400}px)` 
+    imgs.style.transform = `translateX(${-idx * 350}px)` 
 }
 
 rightBtn.addEventListener('click', () =>{
