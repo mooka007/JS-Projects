@@ -158,7 +158,7 @@
 
 
 
-const Questions = [
+const questions = [
     {
         question: "Which language runs in a web browser?",
         a: "Java",
@@ -208,12 +208,12 @@ let currentQuiz = 0;
 let score = 0;
 
 loadPage()
-// loadPage for posting Questions and set to Zero
+// loadPage for posting questions and set to Zero
 function loadPage(){
     deselect()
 
-    // display the Questions and selection 
-    const currentQuestion = Questions[currentQuiz];
+    // display the questions and selection 
+    const currentQuestion = questions[currentQuiz];
     
     questionEl.innerText = currentQuestion.question
     a_quest.innerText = currentQuestion.a
@@ -233,14 +233,33 @@ function select(){
 
     answerEls.forEach(answerEl => {
         if(answerEl.checked ){
-            answer = answerEl
-            console.log(answer)
+            answer = answerEl.id
         }
     })
 
     return answer
 }
 
+
+
 submitBtn.addEventListener('click', () => {
-    const answer = select();
+    const answer = select()
+    
+    if(answer) {
+        if(answer === questions[currentQuiz].correct) {
+            score++
+        }
+        console.log(score)
+        currentQuiz++
+
+        if(currentQuiz < questions.length) {
+            loadPage()
+        } else {
+            quiz.innerHTML = `
+                <h2>You answered ${score}/${questions.length} M3alaft</h2>
+
+                <button onclick="location.reload()">Reload</button>
+            `
+        }
+    }
 })
