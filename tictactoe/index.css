@@ -12,9 +12,13 @@
     cursor: pointer;
 }
 
-#cellContainer {
+.cellContainer    {
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 225px;
     margin: auto;
 }
+/* button{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+} */

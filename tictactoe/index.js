@@ -142,7 +142,7 @@
 // }
 
 
-const wrapper = document.getElementById('buttons');
+const wrapper = document.getElementById('cellContainer');
 
 turn = true
 
@@ -159,14 +159,11 @@ wrapper.addEventListener('click', (event) => {
     return;
   }
 
-
-
-
   console.log(event.target.id)
 
   if(clicked_buttons.includes(event.target.id))
   {
-    return
+    return;
   }
   else
   {
