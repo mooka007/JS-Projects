@@ -138,6 +138,9 @@ let btns = document.querySelectorAll('.cell');
 let stat = document.getElementById('stat')
 let restart = document.querySelector('#restartBtn');
 let inPut = document.querySelector('.input')
+const firstPlayer = document.getElementById("player_1");
+const secPlayer = document.getElementById("player_2");
+
 let player1 = '';
 let player2 = '';
 
@@ -146,30 +149,31 @@ play = false;
 
 
 
+function diplay() {
+  localStorage.setItem("player1", firstPlayer.value);
+  localStorage.setItem("player2", secPlayer.value);
+}
+
+document.getElementById("name1").innerText = localStorage.getItem("player1");
+document.getElementById("name2").innerText = localStorage.getItem("player2");
+
+
 theStart();
 
-document.addEventListener('DOMContentLoaded', ()=> {
-  if(localStorage.getItem('play1')){
-    player1 = localStorage.getItem('play1')
-    player2 = localStorage.getItem('play2')
-    document.getElementById('player_1').value = player1;
-    document.getElementById('player_2').value = player2;
-    stat.textContent = `${player1}'s turn`
-  }
+
+
+// document.addEventListener('DOMContentLoaded', ()=> {
   
-  if(document.getElementById('player_1').textContent == '' || document.getElementById('player_2') == ''){
-    stat.textContent = "Enter player names";
-  }
-})
+//   if(firstPlayer.textContent == '' || secPlayer.textContent == ''){
+//     stat.textContent = "P1 Enter Your name";
+//   }
+ 
+// })
 
-inPut.addEventListener('input', (e)=>{
-  let inputTarget =  e.target.nodedName === 'input'
-  console.log(inputTarget)
-  // if(!inputTarget){
-  //   return
-  // }
+// inPut.addEventListener('input', (e)=>{
+  
 
-})
+// })
 
 
 function theStart() {
