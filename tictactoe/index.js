@@ -71,13 +71,13 @@
 //         changePlayer();
 //     }
 // }
-function restartGame(){
-    currentPlayer = "X";
-    options = ["", "", "", "", "", "", "", "", ""];
-    statusText.textContent = `${currentPlayer}'s turn`;
-    cells.forEach(cell => cell.textContent = "");
-    running = true;
-}
+// function restartGame(){
+//     currentPlayer = "X";
+//     options = ["", "", "", "", "", "", "", "", ""];
+//     statusText.textContent = `${currentPlayer}'s turn`;
+//     cells.forEach(cell => cell.textContent = "");
+//     running = true;
+// }
 
 
 
@@ -137,56 +137,43 @@ function restartGame(){
 let btns = document.querySelectorAll('.cell');
 let stat = document.getElementById('stat')
 let restart = document.querySelector('#restartBtn');
-let inPut = document.querySelector('.input')
+
+
+// input ( names )
 const firstPlayer = document.getElementById("player_1");
 const secPlayer = document.getElementById("player_2");
-
-let player1 = '';
-let player2 = '';
+const na1 = document.getElementById("name1");
+const na2 = document.getElementById("name2")
+let option = [];
 
 play = false;
 
 
 
 
+stat.textContent = "please enter your names";
 function diplay() {
-  localStorage.setItem("player1", firstPlayer.value);
-  localStorage.setItem("player2", secPlayer.value);
+    localStorage.setItem("player1", firstPlayer.value);
+    localStorage.setItem("player2", secPlayer.value);
+    na1.innerText = localStorage.getItem("player1");
+    na2.innerText = localStorage.getItem("player2");
+    stat.textContent = "";
 }
-
-document.getElementById("name1").innerText = localStorage.getItem("player1");
-document.getElementById("name2").innerText = localStorage.getItem("player2");
-
 
 theStart();
 
-
-
-// document.addEventListener('DOMContentLoaded', ()=> {
-  
-//   if(firstPlayer.textContent == '' || secPlayer.textContent == ''){
-//     stat.textContent = "P1 Enter Your name";
-//   }
- 
-// })
-
-// inPut.addEventListener('input', (e)=>{
-  
-
-// })
-
-
 function theStart() {
   btns.forEach(btn => btn.addEventListener('click', click))
-  // stat.textContent = `${player1}'s turn`;
+ 
 
 }
 
 function click(){
   let isBtn = this.getAttribute("index");
+  // console.log(isBtn)
   if(!isBtn){
     return;
   }
-
+  isBtn.push("index")
 }
 

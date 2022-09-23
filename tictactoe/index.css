@@ -21,3 +21,13 @@
 .input {
     margin-bottom:  10px;
 }
+
+.names{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nam{
+    margin-right:60px;
+    margin-left:10px;
+}

@@ -12,13 +12,17 @@
     <div id="gameContainer">
         <h1>Tic Tac Toe</h1>
         <div class="input">
+            <h2 id="stat"></h2>
             <input id="player_1" placeholder="player1"   type="text" />
             <input id="player_2" placeholder="player2"   type="text" />
             <input type="submit" onclick="diplay()">
-            <p id="name1"></p>
-            <p id="name2"></p>
+            <div class="names">
+                <label>First Player :  </label>
+                <p class="nam" id="name1"></p>
+                <label>Second Player : </label>
+                <p class="nam" id="name2"></p>
+            </div>
         </div>
-        <h2 id="stat"></h2>
         <div id="cellContainer">
             <div index="0" class="cell"></div>
             <div index="1" class="cell"></div>
